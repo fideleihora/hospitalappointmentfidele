@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Patient Booking System</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+
+    <a href="index.html" class="back-home">&larr; Back to Home</a>
+
+    <div class="login-container">
+        <!-- Left Side: Hero -->
+        <div class="hero-section">
+            <h1>Care Portal</h1>
+            <p>Join our secure digital platform to instantly book specialized doctor consultations, receive reminders, and manage your health records online.</p>
+        </div>
+
+        <!-- Right Side: Register Form -->
+        <div class="form-section">
+            <div class="form-content">
+                <h2>Create Account</h2>
+                <p>Register to manage and schedule your medical appointments.</p>
+
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label for="reg_fullname">Full Name</label>
+                        <input type="text" id="reg_fullname" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reg_username">Email or Username</label>
+                        <input type="text" id="reg_username" placeholder="Enter your email or username" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="reg_password">Password</label>
+                        <div style="position: relative; display: flex; align-items: center;">
+                            <input type="password" id="reg_password" placeholder="••••••••" required style="padding-right: 45px;">
+                            <button type="button" class="toggle-password" style="position: absolute; right: 12px; background: none; border: none; cursor: pointer; color: var(--primary-color, #2e8b57); font-weight: bold; font-size: 0.85rem; padding: 5px; z-index: 10;">Show</button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reg_confirm_password">Confirm Password</label>
+                        <div style="position: relative; display: flex; align-items: center;">
+                            <input type="password" id="reg_confirm_password" placeholder="••••••••" required style="padding-right: 45px;">
+                            <button type="button" class="toggle-password-confirm" style="position: absolute; right: 12px; background: none; border: none; cursor: pointer; color: var(--primary-color, #2e8b57); font-weight: bold; font-size: 0.85rem; padding: 5px; z-index: 10;">Show</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-login" style="margin-top: 10px;">Register Account</button>
+                </form>
+
+                <div class="extra-links">
+                    Already have an account? <a href="login.html">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/register.js"></script>
+</body>
+</html>

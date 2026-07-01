@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Booking & Schedule</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <a href="index.html" class="back-home">&larr; Back to Home</a>
+    <h1 style="text-align: center; margin-top: 65px;">Patient Information & <b>Doctor Schedule</b></h1>
+    
+    <div class="form-container">
+        <p style="text-align: center;">Please fill out the form and check the <b>available times</b> below.</p>
+
+        <form action="index.html" onsubmit="alert('Booking submitted successfully!');">
+            <fieldset>
+                <legend>Personal Details</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g. +250 788 000 000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nid">Identification Number:</label>
+                        <input type="text" id="nid" name="nid" placeholder="Enter your ID or Passport number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" placeholder="e.g. Rwanda">
+                    </div>
+                    <div class="form-group">
+                        <label for="province">Province:</label>
+                        <input type="text" id="province" name="province">
+                    </div>
+                    <div class="form-group">
+                        <label for="district">District:</label>
+                        <input type="text" id="district" name="district">
+                    </div>
+                    <div class="form-group">
+                        <label for="sector">Sector:</label>
+                        <input type="text" id="sector" name="sector">
+                    </div>
+                    <div class="form-group">
+                        <label for="village">Village:</label>
+                        <input type="text" id="village" name="village">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Appointment Details</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="hospital">Choose Hospital:</label>
+                        <select id="hospital" name="hospital">
+                            <option value="kfh">King Faisal Hospital (KFH)</option>
+                            <option value="butaro">Butaro Hospital</option>
+                            <option value="kanombe">Oncologie Kanombe</option>
+                            <option value="chuk">University Teaching Hospital of Kigali (CHUK)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctor">Select Doctor:</label>
+                        <select id="doctor" name="doctor">
+                            <option value="niyonzima">Dr. NIYONZIMA Augustin</option>
+                            <option value="nyiransabimana">Dr. Nyiransabimana Floride</option>
+                            <option value="niyonsenga">Dr. NIYONSENGA Grace</option>
+                            <option value="iradukunda">Dr. IRADUKUNDA Olivier</option>
+                            <option value="niyomufasha">Dr. NIYOMUFASHA Steven</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date:</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time:</label>
+                        <input type="time" id="time" name="time">
+                    </div>
+                    <div class="form-group">
+                        <label for="disease">Type of Disease:</label>
+                        <input type="text" id="disease" name="disease" placeholder="e.g. Malaria, Flu">
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label>Is this your first time visiting a doctor on this disease?</label>
+                        <div class="radio-group">
+                            <input type="radio" id="visit_yes" name="first_visit" value="yes">
+                            <label for="visit_yes">Yes</label>
+                            <input type="radio" id="visit_no" name="first_visit" value="no">
+                            <label for="visit_no">No</label>
+                        </div>
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label for="condition">Describe your condition:</label>
+                        <textarea id="condition" name="condition" placeholder="Describe your condition here..." rows="4"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn-submit">Submit Booking</button>
+        </form>
+    </div>
+
+    <br>
+    <div style="max-width: 900px; margin: auto;">
+        <h2><b>Weekly Doctor Schedule</b></h2>
+        <table>
+        <tr>
+            <th>Doctor Name</th>
+            <th>Specialty</th>
+            <th>Available Days</th>
+            <th>Time Slot</th>
+        </tr>
+        <tr>
+            <td>Dr. NIYONZIMA Augustin</td>
+            <td>General Surgery</td>
+            <td>Mon, Wed, Fri</td>
+            <td>08:00 - 12:00</td>
+        </tr>
+        <tr>
+            <td>Dr. Nyiransabimana Floride</td>
+            <td>Pediatrics</td>
+            <td>Tue, Thu</td>
+            <td>09:00 - 15:00</td>
+        </tr>
+        <tr>
+            <td>Dr. NIYONSENGA Grace</td>
+            <td>Gynaecology</td>
+            <td>Mon, Thu</td>
+            <td>10:00 - 16:00</td>
+        </tr>
+        <tr>
+            <td>Dr. IRADUKUNDA Olivier</td>
+            <td>Cardiology</td>
+            <td>Wednesday</td>
+            <td>08:00 - 14:00</td>
+        </tr>
+        <tr>
+            <td>Dr. NIYOMUFASHA Steven</td>
+            <td>Internal Medicine</td>
+            <td>Saturday</td>
+            <td>09:00 - 12:00</td>
+        </tr>
+    </table>
+
+    <br>
+    <nav>
+        <a href="index.html"><b>Back to Home</b></a> | 
+        <a href="login.html"><b>User Login</b></a> | 
+        <a href="admin_login.html" onclick="return confirm('Please login as an admin to access the workspace. Do you wish to proceed to the login page?')"><b>Admin Workspace</b></a>
+    </nav>
+    <script src="../JS/patient_info.js"></script>
+</body>
+</html>

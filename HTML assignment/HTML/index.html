@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PATIENTS BOOKING SYSTEM - Home</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Transforming Healthcare Access in Rwanda</h1>
+        <p>A unified digital platform connecting patients with specialized doctors across the country's leading hospitals.</p>
+        <div class="search-container" style="margin-top: 25px; width: 100%; max-width: 500px; position: relative; margin-bottom: 25px;">
+            <input type="text" id="homeSearch" placeholder="Search hospitals or medical services (e.g. Faisal, Surgery)..." style="padding: 12px 20px; border-radius: 25px; border: none; width: 100%; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); box-sizing: border-box;">
+            <div id="searchResults" style="position: absolute; width: 100%; background: white; color: #333; border-radius: 8px; margin-top: 5px; max-height: 200px; overflow-y: auto; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: none; z-index: 100; box-sizing: border-box; border: 1px solid #eee;"></div>
+        </div>
+        <div class="hero-btns">
+            <a href="login.html" class="btn btn-primary">User Login</a>
+            <a href="login.html" class="btn btn-secondary">Book Appointment</a>
+            <a href="admin_login.html" class="btn btn-outline">Staff Portal</a>
+        </div>
+    </header>
+
+    <!-- Unique Solutions Section -->
+    <section class="solutions">
+        <h2>Our Unique Solutions</h2>
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <h3>Instant Scheduling</h3>
+                <p>Eliminate long hospital queues. Book your specialist consultation in under 2 minutes from any device.</p>
+            </div>
+            <div class="solution-card">
+                <h3>Live Doctor Tracking</h3>
+                <p>View real-time availability of specialists across multiple hospitals to find the earliest possible care.</p>
+            </div>
+            <div class="solution-card">
+                <h3>Seamless Referrals</h3>
+                <p>Efficiently move between district and referral hospitals like King Faisal and CHUK with digital coordination.</p>
+            </div>
+            <div class="solution-card">
+                <h3>Smart Reminders</h3>
+                <p>Receive automated SMS and email alerts so you never miss a follow-up or a critical appointment.</p>
+            </div>
+            <div class="solution-card">
+                <h3>Centralized Records</h3>
+                <p>Your appointment history and doctor notes securely stored and accessible for your next visit.</p>
+            </div>
+            <div class="solution-card">
+                <h3>Emergency Routing</h3>
+                <p>Integrated maps and hospital contact data to find the nearest available emergency services instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Hospitals -->
+    <section class="hospitals">
+        <h2>Supporting Rwanda's Leading Hospitals</h2>
+        <div class="hospital-list">
+            <div class="hospital-item">King Faisal Hospital (KFH)</div>
+            <div class="hospital-item">CHUK</div>
+            <div class="hospital-item">Butaro Cancer Center</div>
+            <div class="hospital-item">RMH Kanombe</div>
+            <div class="hospital-item">Legacy Clinics</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Patient Booking System. All rights reserved.</p>
+        <p style="margin-top: 10px;">Improving lives through digital health innovation.</p>
+    </footer>
+
+    <script src="../JS/home.js"></script>
+</body>
+</html>

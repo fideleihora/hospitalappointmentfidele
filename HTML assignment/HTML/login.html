@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Patient Booking System</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+
+    <a href="index.html" class="back-home">&larr; Back to Home</a>
+
+    <div class="login-container">
+        <!-- Left Side: Hero -->
+        <div class="hero-section">
+            <h1>Care Portal</h1>
+            <p>Access your health records, manage your appointments, and connect with your healthcare providers all in one place.</p>
+        </div>
+
+        <!-- Right Side: Login Form -->
+        <div class="form-section">
+            <div class="form-content">
+                <h2>Welcome Back</h2>
+                <p>Please enter your details to sign in.</p>
+
+                <form id="patientLoginForm">
+                    <div class="input-group">
+                        <label for="username">Email or Username</label>
+                        <input type="text" id="username" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div style="position: relative; display: flex; align-items: center;">
+                            <input type="password" id="password" placeholder="••••••••" required style="padding-right: 45px;">
+                            <button type="button" class="toggle-password" style="position: absolute; right: 12px; background: none; border: none; cursor: pointer; color: var(--primary-color, #2e8b57); font-weight: bold; font-size: 0.85rem; padding: 5px; z-index: 10;">Show</button>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 0.85rem;">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#" style="color: #2e8b57; text-decoration: none;">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login">Sign In</button>
+                </form>
+
+                <div class="extra-links">
+                    Don't have an account? <a href="register.html">Register Now</a>
+                    <br><br>
+                    <a href="admin_login.html" style="color: #666; font-weight: normal; font-size: 0.8rem;">Staff/Admin Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/patient_login.js"></script>
+</body>
+</html>

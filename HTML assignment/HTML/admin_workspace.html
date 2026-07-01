@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Workspace - Patient Booking System</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a href="index.html">&larr; Back to Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#appointments">Manage Appointments</a>
+        <a href="#database">Patient Database</a>
+        <a href="#schedules">Doctor Schedules</a>
+        <a href="#reports">Reports</a>
+        <a href="admin_login.html" style="margin-top: 50px; background: #246d44;">Logout</a>
+    </div>
+
+    <div class="main-content">
+        
+        <!-- SECTION 1: APPOINTMENTS (Defined before dashboard for CSS logic) -->
+        <div id="appointments" class="content-section">
+            <header>
+                <h1>Manage Appointments</h1>
+                <div style="color: #666;">View and process booking requests</div>
+            </header>
+            <div class="table-container">
+                <h2 class="table-title">All Appointment Requests</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Patient</th>
+                            <th>Doctor</th>
+                            <th>Hospital</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>#1001</td><td>Kwizera Jean</td><td>Dr. NIYONZIMA</td><td>King Faisal</td><td><span class="badge badge-pending">Pending</span></td><td><button class="btn-action btn-approve">Approve</button></td></tr>
+                        <tr><td>#1002</td><td>Mutesi Alice</td><td>Dr. NIYONSENGA</td><td>CHUK</td><td><span class="badge badge-confirmed">Confirmed</span></td><td><button class="btn-action btn-cancel">Cancel</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECTION 2: PATIENT DATABASE -->
+        <div id="database" class="content-section">
+            <header>
+                <h1>Patient Database</h1>
+                <div style="color: #666;">Complete list of registered patients</div>
+            </header>
+            <div class="table-container">
+                <h2 class="table-title">Registered Patients</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Province</th>
+                            <th>History</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kwizera Jean</td><td>jean.k@mail.com</td><td>+250 788 000</td><td>Kigali</td><td><button class="btn-action btn-view">View File</button></td></tr>
+                        <tr><td>Mutesi Alice</td><td>mutesi.a@mail.com</td><td>+250 788 111</td><td>Northern</td><td><button class="btn-action btn-view">View File</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECTION 3: DOCTOR SCHEDULES -->
+        <div id="schedules" class="content-section">
+            <header>
+                <h1>Doctor Schedules</h1>
+                <div style="color: #666;">Manage medical staff availability</div>
+            </header>
+            
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; align-items: start;">
+                <div class="table-container">
+                    <h2 class="table-title">Active Shifts</h2>
+                    <table id="doctorsTable">
+                        <thead>
+                            <tr>
+                                <th>Doctor</th>
+                                <th>Specialty</th>
+                                <th>Days</th>
+                                <th>Hospital</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Loaded dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <h2 class="table-title">Add New Doctor</h2>
+                    <form id="addDoctorForm">
+                        <div class="form-group">
+                            <label for="docName">Doctor Name</label>
+                            <input type="text" id="docName" placeholder="e.g. Dr. Gasana Jean" required style="padding: 8px; width: 100%;">
+                        </div>
+                        <div class="form-group">
+                            <label for="docSpecialty">Specialty</label>
+                            <input type="text" id="docSpecialty" placeholder="e.g. Cardiology" required style="padding: 8px; width: 100%;">
+                        </div>
+                        <div class="form-group">
+                            <label for="docDays">Available Days</label>
+                            <input type="text" id="docDays" placeholder="e.g. Mon, Wed" required style="padding: 8px; width: 100%;">
+                        </div>
+                        <div class="form-group">
+                            <label for="docHospital">Hospital</label>
+                            <select id="docHospital" required style="padding: 8px; width: 100%;">
+                                <option value="kfh">King Faisal Hospital (KFH)</option>
+                                <option value="butaro">Butaro Hospital</option>
+                                <option value="kanombe">Oncologie Kanombe</option>
+                                <option value="chuk">University Teaching Hospital of Kigali (CHUK)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-submit" style="width: 100%; padding: 10px;">Add Doctor</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: REPORTS -->
+        <div id="reports" class="content-section">
+            <header>
+                <h1>Reports & Analytics</h1>
+                <div style="color: #666;">System performance metrics</div>
+            </header>
+            <div class="stats-container">
+                <div class="stat-card"><h3>Total Revenue</h3><p>RWF 2.4M</p></div>
+                <div class="stat-card"><h3>Success Rate</h3><p>94%</p></div>
+                <div class="stat-card"><h3>New Patients</h3><p>+128</p></div>
+            </div>
+            <div class="table-container">
+                <h2 class="table-title">Monthly Appointment Trends</h2>
+                <div style="height: 150px; background: #f9f9f9; display: flex; align-items: flex-end; gap: 10px; padding: 20px; border-radius: 5px;">
+                    <div style="height: 40%; background: #2e8b57; flex: 1;"></div>
+                    <div style="height: 60%; background: #2e8b57; flex: 1;"></div>
+                    <div style="height: 90%; background: #2e8b57; flex: 1;"></div>
+                    <div style="height: 75%; background: #2e8b57; flex: 1;"></div>
+                    <div style="height: 100%; background: #2e8b57; flex: 1;"></div>
+                </div>
+                <p style="text-align: center; color: #999; margin-top: 10px;">Jan - Feb - Mar - Apr - May</p>
+            </div>
+        </div>
+
+        <!-- SECTION 5: DASHBOARD (Default) -->
+        <div id="dashboard" class="content-section">
+            <header>
+                <h1>Workspace Overview</h1>
+                <div style="color: #666;">Welcome, <b>Admin User</b></div>
+            </header>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Today's Appointments</h3>
+                    <p>12</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Requests</h3>
+                    <p>5</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Patients</h3>
+                    <p>1,240</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Available Doctors</h3>
+                    <p>8</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h2 class="table-title">Recent Booking Requests</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Hospital</th>
+                            <th>Doctor</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Kwizera Jean</b></td>
+                            <td>King Faisal (KFH)</td>
+                            <td>Dr. NIYONZIMA A.</td>
+                            <td><span class="badge badge-pending">Pending</span></td>
+                            <td>
+                                <button class="btn-action btn-approve">Approve</button>
+                                <button class="btn-action btn-cancel">Cancel</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Mutesi Alice</b></td>
+                            <td>CHUK</td>
+                            <td>Dr. NIYONSENGA G.</td>
+                            <td><span class="badge badge-confirmed">Confirmed</span></td>
+                            <td>
+                                <button class="btn-action btn-view">View Detail</button>
+                                <button class="btn-action btn-cancel">Cancel</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../JS/admin.js"></script>
+</body>
+</html>
