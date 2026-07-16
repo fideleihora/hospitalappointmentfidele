@@ -8,13 +8,13 @@
 // 1. Initialize Doctors Database
 function initDoctorsDatabase() {
     let doctors = JSON.parse(localStorage.getItem("system_doctors"));
-    if (!doctors) {
+    if (!doctors || doctors.length === 0 || !doctors[0].email) {
         doctors = [
-            { id: "niyonzima", name: "Dr. NIYONZIMA Augustin", specialty: "General Surgery", days: "Mon, Wed, Fri", hospitalCode: "kfh", hospitalName: "King Faisal Hospital (KFH)" },
-            { id: "nyiransabimana", name: "Dr. Nyiransabimana Floride", specialty: "Pediatrics", days: "Tue, Thu", hospitalCode: "butaro", hospitalName: "Butaro Hospital" },
-            { id: "niyonsenga", name: "Dr. NIYONSENGA Grace", specialty: "Gynaecology", days: "Mon, Thu", hospitalCode: "chuk", hospitalName: "University Teaching Hospital of Kigali (CHUK)" },
-            { id: "iradukunda", name: "Dr. IRADUKUNDA Olivier", specialty: "Cardiology", days: "Wednesday", hospitalCode: "chuk", hospitalName: "University Teaching Hospital of Kigali (CHUK)" },
-            { id: "niyomufasha", name: "Dr. NIYOMUFASHA Steven", specialty: "Internal Medicine", days: "Saturday", hospitalCode: "kfh", hospitalName: "King Faisal Hospital (KFH)" }
+            { id: "niyonzima", name: "Dr. NIYONZIMA Augustin", specialty: "General Surgery", days: "Mon, Wed, Fri", hospitalCode: "kfh", hospitalName: "King Faisal Hospital (KFH)", phone: "+250 788 123 456", email: "augustin.niyonzima@kfh.rw" },
+            { id: "nyiransabimana", name: "Dr. Nyiransabimana Floride", specialty: "Pediatrics", days: "Tue, Thu", hospitalCode: "butaro", hospitalName: "Butaro Hospital", phone: "+250 788 234 567", email: "floride.nyiransabimana@butaro.rw" },
+            { id: "niyonsenga", name: "Dr. NIYONSENGA Grace", specialty: "Gynaecology", days: "Mon, Thu", hospitalCode: "chuk", hospitalName: "University Teaching Hospital of Kigali (CHUK)", phone: "+250 788 345 678", email: "grace.niyonsenga@chuk.rw" },
+            { id: "iradukunda", name: "Dr. IRADUKUNDA Olivier", specialty: "Cardiology", days: "Wednesday", hospitalCode: "chuk", hospitalName: "University Teaching Hospital of Kigali (CHUK)", phone: "+250 788 456 789", email: "olivier.iradukunda@chuk.rw" },
+            { id: "niyomufasha", name: "Dr. NIYOMUFASHA Steven", specialty: "Internal Medicine", days: "Saturday", hospitalCode: "kfh", hospitalName: "King Faisal Hospital (KFH)", phone: "+250 788 567 890", email: "steven.niyomufasha@kfh.rw" }
         ];
         localStorage.setItem("system_doctors", JSON.stringify(doctors));
     }
@@ -34,8 +34,10 @@ function renderDoctorsTable() {
         tr.innerHTML = `
             <td><b>${doc.name}</b></td>
             <td>${doc.specialty}</td>
-            <td>${doc.days}</td>
             <td>${doc.hospitalName}</td>
+            <td><a href="mailto:${doc.email || ''}">${doc.email || 'N/A'}</a></td>
+            <td><a href="tel:${doc.phone || ''}">${doc.phone || 'N/A'}</a></td>
+            <td>${doc.days}</td>
             <td>
                 <button class="btn-action btn-cancel" onclick="removeDoctor('${doc.id}')" style="margin: 0;">Remove</button>
             </td>
@@ -73,6 +75,8 @@ function handleAddDoctor(e) {
     const hospitalSelect = document.getElementById("docHospital");
     const hospitalCode = hospitalSelect.value;
     const hospitalName = hospitalSelect.options[hospitalSelect.selectedIndex].text;
+    const phone = document.getElementById("docPhone").value.trim();
+    const email = document.getElementById("docEmail").value.trim();
 
     const id = "doc_" + Date.now(); // Unique ID
 
@@ -82,7 +86,9 @@ function handleAddDoctor(e) {
         specialty: specialty,
         days: days,
         hospitalCode: hospitalCode,
-        hospitalName: hospitalName
+        hospitalName: hospitalName,
+        phone: phone,
+        email: email
     };
 
     let doctors = JSON.parse(localStorage.getItem("system_doctors")) || [];

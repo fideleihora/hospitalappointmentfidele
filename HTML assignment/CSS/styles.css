@@ -194,7 +194,7 @@ tr:hover {
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url("https://open.enabel.be/files/pictures/update/RWA23004_66f3c80296b4e4.49551083.jpeg");
+                url("../images/home.jpeg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -204,6 +204,7 @@ tr:hover {
     text-align: center;
     color: white;
     padding: 20px;
+    
 }
 .hero h1 { font-size: 3.5rem; max-width: 900px; }
 .hero p { font-size: 1.25rem; max-width: 700px; margin-bottom: 30px; }
@@ -361,4 +362,16 @@ legend { color: var(--primary-color); font-weight: bold; padding: 0 10px; }
     .sidebar-overlay.active {
         display: block;
     }
+}
+
+/* Contact Links in Tables */
+.contact-link {
+    color: #2e8b57;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+.contact-link:hover {
+    color: #246d44;
+    text-decoration: underline;
 }
